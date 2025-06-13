@@ -1,0 +1,15 @@
+1. KIND Cluster
+2. KIND setup on Local
+3.  KIND cluster creation
+4. What is minikube Cluster , installation , Cluster creation
+5. Kubeadm, setup & installation , cluster creation
+6. Namespaces
+7. Pods
+8. Deployments
+9. ReplicaSet vs StatefulSet vs Deployments
+10. Lables and Selectors
+11. Rolling update in Deployment
+12. ReplicaSets
+13. DaemonSets
+14. Making manifest files for k8s objects - pods, deployments, replicasets, daemonsets, services - nodeport, clusterip
+15. services - clusterip, nodeport

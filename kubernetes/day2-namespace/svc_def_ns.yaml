@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2025-06-13T07:32:06Z"
+  labels:
+    app: nginx-def
+  name: svc-def
+  namespace: default
+  resourceVersion: "34730"
+  uid: 60b6d2ee-8e7e-46ac-83e9-8f15167520cb
+spec:
+  clusterIP: 10.96.159.119
+  clusterIPs:
+  - 10.96.159.119
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx-def
+
+  type: ClusterIP
+status:
+  loadBalancer: {}
