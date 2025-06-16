@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-compute-apps
+  labels:
+    app: compute-intensive
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: compute-intensive
+  template:
+    metadata:
+      labels:
+        type: compute-intensive
+    spec:
+      containers:
+      - name: name
+        image: nginx:latest
+      tolerations:
+      - key: "bigdata"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"
+      - key: "ram"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"

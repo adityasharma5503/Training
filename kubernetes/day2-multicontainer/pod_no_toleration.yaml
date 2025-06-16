@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: notoleration-pod
+  labels:
+    name: notoleration-pod
+spec:
+  containers:
+  - name: notoleration-con
+    image: nginx:latest
+

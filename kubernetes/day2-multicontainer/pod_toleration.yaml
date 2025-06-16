@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: myapp2
+  name: pod-gpu-toleration
   labels:
-    name: myapp
+    name: pod-gpu-toleration
 spec:
   containers:
   - name: redis
