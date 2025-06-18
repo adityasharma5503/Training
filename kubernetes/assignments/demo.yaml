@@ -49,6 +49,7 @@ spec:
   selector:
     app: bar
   ports:
+  # Default port used by the image
   - port: 8080
 ---
 apiVersion: networking.k8s.io/v1
@@ -56,6 +57,10 @@ kind: Ingress
 metadata:
   name: example-ingress
 spec:
+  tls:
+  - hosts:
+    - localhost
+    secretName: example-tls
   rules:
   - http:
       paths:
