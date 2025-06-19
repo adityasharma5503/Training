@@ -52,7 +52,7 @@ kubectl describe csr adam
 ```
 
 ```
-kubectl csr approve adam
+kubectl certificate approve myuser
 ```
 
 3. 
