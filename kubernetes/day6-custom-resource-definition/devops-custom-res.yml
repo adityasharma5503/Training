@@ -1,0 +1,10 @@
+kind: Batch
+apiVersion: devops.com/v1
+metadata:
+  name: devops-cr
+  namespace: default
+specs:
+  name: devops-first-batch
+  duration: 500
+  mode: offline
+  

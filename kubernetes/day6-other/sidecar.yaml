@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp
+  labels:
+    name: myapp
+spec:
+  volumes:
+    - name:  common-vol
+      emptyDir: {}
+  containers:
+  - name: main-con
+    image: busybox
+    command: ["sh", "-c", "while true; do echo 'Good Morning' >> /var/logs/app/echologs; sleep 2; done;"]
+    volumeMounts:
+      - name:  common-vol
+        mountPath:  /var/logs/app
+  - name: sidecar-con
+    image: busybox
+    command: ["sh", "-c", "while true; do wc /var/logs/app/echologs; sleep 4; done;"]
+    volumeMounts:
+      - name:  common-vol
+        mountPath: /var/logs/app
+    
+
