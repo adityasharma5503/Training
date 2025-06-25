@@ -1,0 +1,32 @@
+# Ignore Terraform working directories
+**/.terraform/
+**/.terraform.lock.hcl
+
+# Ignore Node.js dependencies
+**/node_modules/
+
+# Ignore Python cache and virtual environments
+**/__pycache__/
+**/*.py[cod]
+**/*.pyo
+**/.Python
+**/env/
+**/venv/
+**/.env/
+**/.venv/
+
+# Optional: Ignore .git folders if nested repos exist
+**/.git/
+
+# Ignore log and temp files
+*.log
+*.tmp
+*.swp
+
+# Ignore VSCode/IDE settings
+.vscode/
+.idea/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
