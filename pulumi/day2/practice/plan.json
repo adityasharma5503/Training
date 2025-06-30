@@ -1,0 +1,1160 @@
+{
+    "manifest": {
+        "time": "2025-06-27T18:11:11.000925534+05:30",
+        "magic": "6a5f1cff8ef65523800fc5c9de7d17699a6e5b813cf7d2dab78054c0abf00cfc",
+        "version": "v3.178.0"
+    },
+    "config": {
+        "practice:endpoints[0].url": "www.eg.com",
+        "practice:endpoints[1].url": {
+            "secure": "AAABALT4JB2PffbpdySu/u2qxkvsMoHFmaRcSliH4v0rqOEFnnpNHKzFlRM="
+        },
+        "practice:stack": "dev",
+        "pulumi:tags": {
+            "pulumi:template": "kubernetes-python"
+        }
+    },
+    "resourcePlans": {
+        "urn:pulumi:dev::practice::kubernetes:core/v1:Pod::mongo-pod": {
+            "goal": {
+                "type": "kubernetes:core/v1:Pod",
+                "name": "mongo-pod",
+                "custom": true,
+                "inputDiff": {},
+                "outputDiff": {},
+                "parent": "urn:pulumi:dev::practice::pulumi:pulumi:Stack::practice-dev",
+                "protect": false,
+                "dependencies": [
+                    "urn:pulumi:dev::practice::kubernetes:core/v1:Namespace::chat-app"
+                ],
+                "provider": "urn:pulumi:dev::practice::pulumi:providers:kubernetes::default_4_23_0::7a29f845-35a0-450a-bc58-1fcbdd5c4e26",
+                "propertyDependencies": {
+                    "apiVersion": [],
+                    "kind": [],
+                    "metadata": [
+                        "urn:pulumi:dev::practice::kubernetes:core/v1:Namespace::chat-app"
+                    ],
+                    "spec": []
+                },
+                "customTimeouts": {}
+            },
+            "steps": [
+                "same"
+            ],
+            "state": {
+                "__fieldManager": "pulumi-kubernetes-6c3ed42a",
+                "__initialApiVersion": "v1",
+                "__inputs": {
+                    "apiVersion": "v1",
+                    "kind": "Pod",
+                    "metadata": {
+                        "annotations": {
+                            "pulumi.com/autonamed": "true"
+                        },
+                        "name": "mongo-pod-c63693ca",
+                        "namespace": "chat-app"
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "image": "mongo:latest",
+                                "name": "mongo-pod"
+                            }
+                        ]
+                    }
+                },
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "metadata": {
+                    "annotations": {
+                        "pulumi.com/autonamed": "true"
+                    },
+                    "creationTimestamp": "2025-06-27T11:48:04Z",
+                    "managedFields": [
+                        {
+                            "apiVersion": "v1",
+                            "fieldsType": "FieldsV1",
+                            "fieldsV1": {
+                                "f:metadata": {
+                                    "f:annotations": {
+                                        "f:pulumi.com/autonamed": {}
+                                    }
+                                },
+                                "f:spec": {
+                                    "f:containers": {
+                                        "k:{\"name\":\"mongo-pod\"}": {
+                                            ".": {},
+                                            "f:image": {},
+                                            "f:name": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "manager": "pulumi-kubernetes-6c3ed42a",
+                            "operation": "Apply",
+                            "time": "2025-06-27T11:48:04Z"
+                        },
+                        {
+                            "apiVersion": "v1",
+                            "fieldsType": "FieldsV1",
+                            "fieldsV1": {
+                                "f:status": {
+                                    "f:conditions": {
+                                        "k:{\"type\":\"ContainersReady\"}": {
+                                            ".": {},
+                                            "f:lastProbeTime": {},
+                                            "f:lastTransitionTime": {},
+                                            "f:status": {},
+                                            "f:type": {}
+                                        },
+                                        "k:{\"type\":\"Initialized\"}": {
+                                            ".": {},
+                                            "f:lastProbeTime": {},
+                                            "f:lastTransitionTime": {},
+                                            "f:status": {},
+                                            "f:type": {}
+                                        },
+                                        "k:{\"type\":\"PodReadyToStartContainers\"}": {
+                                            ".": {},
+                                            "f:lastProbeTime": {},
+                                            "f:lastTransitionTime": {},
+                                            "f:status": {},
+                                            "f:type": {}
+                                        },
+                                        "k:{\"type\":\"Ready\"}": {
+                                            ".": {},
+                                            "f:lastProbeTime": {},
+                                            "f:lastTransitionTime": {},
+                                            "f:status": {},
+                                            "f:type": {}
+                                        }
+                                    },
+                                    "f:containerStatuses": {},
+                                    "f:hostIP": {},
+                                    "f:hostIPs": {},
+                                    "f:phase": {},
+                                    "f:podIP": {},
+                                    "f:podIPs": {
+                                        ".": {},
+                                        "k:{\"ip\":\"10.244.1.4\"}": {
+                                            ".": {},
+                                            "f:ip": {}
+                                        }
+                                    },
+                                    "f:startTime": {}
+                                }
+                            },
+                            "manager": "kubelet",
+                            "operation": "Update",
+                            "subresource": "status",
+                            "time": "2025-06-27T11:48:07Z"
+                        }
+                    ],
+                    "name": "mongo-pod-c63693ca",
+                    "namespace": "chat-app",
+                    "resourceVersion": "414260",
+                    "uid": "4ed559fa-5b66-4f68-8fbe-c15ae9c532fb"
+                },
+                "spec": {
+                    "containers": [
+                        {
+                            "image": "mongo:latest",
+                            "imagePullPolicy": "Always",
+                            "name": "mongo-pod",
+                            "resources": {},
+                            "terminationMessagePath": "/dev/termination-log",
+                            "terminationMessagePolicy": "File",
+                            "volumeMounts": [
+                                {
+                                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                    "name": "kube-api-access-j2xvh",
+                                    "readOnly": true
+                                }
+                            ]
+                        }
+                    ],
+                    "dnsPolicy": "ClusterFirst",
+                    "enableServiceLinks": true,
+                    "nodeName": "ingress-cluster-worker",
+                    "preemptionPolicy": "PreemptLowerPriority",
+                    "priority": 0,
+                    "restartPolicy": "Always",
+                    "schedulerName": "default-scheduler",
+                    "securityContext": {},
+                    "serviceAccount": "default",
+                    "serviceAccountName": "default",
+                    "terminationGracePeriodSeconds": 30,
+                    "tolerations": [
+                        {
+                            "effect": "NoExecute",
+                            "key": "node.kubernetes.io/not-ready",
+                            "operator": "Exists",
+                            "tolerationSeconds": 300
+                        },
+                        {
+                            "effect": "NoExecute",
+                            "key": "node.kubernetes.io/unreachable",
+                            "operator": "Exists",
+                            "tolerationSeconds": 300
+                        }
+                    ],
+                    "volumes": [
+                        {
+                            "name": "kube-api-access-j2xvh",
+                            "projected": {
+                                "defaultMode": 420,
+                                "sources": [
+                                    {
+                                        "serviceAccountToken": {
+                                            "expirationSeconds": 3607,
+                                            "path": "token"
+                                        }
+                                    },
+                                    {
+                                        "configMap": {
+                                            "items": [
+                                                {
+                                                    "key": "ca.crt",
+                                                    "path": "ca.crt"
+                                                }
+                                            ],
+                                            "name": "kube-root-ca.crt"
+                                        }
+                                    },
+                                    {
+                                        "downwardAPI": {
+                                            "items": [
+                                                {
+                                                    "fieldRef": {
+                                                        "apiVersion": "v1",
+                                                        "fieldPath": "metadata.namespace"
+                                                    },
+                                                    "path": "namespace"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "status": {
+                    "conditions": [
+                        {
+                            "lastTransitionTime": "2025-06-27T11:48:07Z",
+                            "status": "True",
+                            "type": "PodReadyToStartContainers"
+                        },
+                        {
+                            "lastTransitionTime": "2025-06-27T11:48:04Z",
+                            "status": "True",
+                            "type": "Initialized"
+                        },
+                        {
+                            "lastTransitionTime": "2025-06-27T11:48:07Z",
+                            "status": "True",
+                            "type": "Ready"
+                        },
+                        {
+                            "lastTransitionTime": "2025-06-27T11:48:07Z",
+                            "status": "True",
+                            "type": "ContainersReady"
+                        },
+                        {
+                            "lastTransitionTime": "2025-06-27T11:48:04Z",
+                            "status": "True",
+                            "type": "PodScheduled"
+                        }
+                    ],
+                    "containerStatuses": [
+                        {
+                            "containerID": "containerd://28e36171935c5532aa8672d7421ec6242fd7482e5bd530bb214bb37aea5aa9b1",
+                            "image": "docker.io/library/mongo:latest",
+                            "imageID": "docker.io/library/mongo@sha256:98028cf281bb5d49ace5e1ddbd4509e8f1382fe80ef1cf101eeefdc106d76cd4",
+                            "lastState": {},
+                            "name": "mongo-pod",
+                            "ready": true,
+                            "restartCount": 0,
+                            "started": true,
+                            "state": {
+                                "running": {
+                                    "startedAt": "2025-06-27T11:48:07Z"
+                                }
+                            },
+                            "volumeMounts": [
+                                {
+                                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                    "name": "kube-api-access-j2xvh",
+                                    "readOnly": true,
+                                    "recursiveReadOnly": "Disabled"
+                                }
+                            ]
+                        }
+                    ],
+                    "hostIP": "172.19.0.5",
+                    "hostIPs": [
+                        {
+                            "ip": "172.19.0.5"
+                        }
+                    ],
+                    "phase": "Running",
+                    "podIP": "10.244.1.4",
+                    "podIPs": [
+                        {
+                            "ip": "10.244.1.4"
+                        }
+                    ],
+                    "qosClass": "BestEffort",
+                    "startTime": "2025-06-27T11:48:04Z"
+                }
+            },
+            "seed": "dO85op8B9dFDtIl4keELMZ5HWTUp3ZUR99P9Rcoc6qk="
+        },
+        "urn:pulumi:dev::practice::kubernetes:core/v1:Pod::my-pod": {
+            "goal": {
+                "type": "kubernetes:core/v1:Pod",
+                "name": "my-pod",
+                "custom": true,
+                "inputDiff": {},
+                "outputDiff": {},
+                "parent": "urn:pulumi:dev::practice::pulumi:pulumi:Stack::practice-dev",
+                "protect": false,
+                "dependencies": [
+                    "urn:pulumi:dev::practice::kubernetes:core/v1:Namespace::chat-app"
+                ],
+                "provider": "urn:pulumi:dev::practice::pulumi:providers:kubernetes::default_4_23_0::7a29f845-35a0-450a-bc58-1fcbdd5c4e26",
+                "propertyDependencies": {
+                    "apiVersion": [],
+                    "kind": [],
+                    "metadata": [
+                        "urn:pulumi:dev::practice::kubernetes:core/v1:Namespace::chat-app"
+                    ],
+                    "spec": []
+                },
+                "customTimeouts": {}
+            },
+            "steps": [
+                "same"
+            ],
+            "state": {
+                "__fieldManager": "pulumi-kubernetes-7b316a40",
+                "__initialApiVersion": "v1",
+                "__inputs": {
+                    "apiVersion": "v1",
+                    "kind": "Pod",
+                    "metadata": {
+                        "annotations": {
+                            "pulumi.com/autonamed": "true"
+                        },
+                        "name": "my-pod-2f84176c",
+                        "namespace": "chat-app"
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "image": "nginx:latest",
+                                "name": "nginx"
+                            }
+                        ]
+                    }
+                },
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "metadata": {
+                    "annotations": {
+                        "pulumi.com/autonamed": "true"
+                    },
+                    "creationTimestamp": "2025-06-27T09:25:42Z",
+                    "managedFields": [
+                        {
+                            "apiVersion": "v1",
+                            "fieldsType": "FieldsV1",
+                            "fieldsV1": {
+                                "f:metadata": {
+                                    "f:annotations": {
+                                        "f:pulumi.com/autonamed": {}
+                                    }
+                                },
+                                "f:spec": {
+                                    "f:containers": {
+                                        "k:{\"name\":\"nginx\"}": {
+                                            ".": {},
+                                            "f:image": {},
+                                            "f:name": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "manager": "pulumi-kubernetes-7b316a40",
+                            "operation": "Apply",
+                            "time": "2025-06-27T09:25:42Z"
+                        },
+                        {
+                            "apiVersion": "v1",
+                            "fieldsType": "FieldsV1",
+                            "fieldsV1": {
+                                "f:status": {
+                                    "f:conditions": {
+                                        "k:{\"type\":\"ContainersReady\"}": {
+                                            ".": {},
+                                            "f:lastProbeTime": {},
+                                            "f:lastTransitionTime": {},
+                                            "f:status": {},
+                                            "f:type": {}
+                                        },
+                                        "k:{\"type\":\"Initialized\"}": {
+                                            ".": {},
+                                            "f:lastProbeTime": {},
+                                            "f:lastTransitionTime": {},
+                                            "f:status": {},
+                                            "f:type": {}
+                                        },
+                                        "k:{\"type\":\"PodReadyToStartContainers\"}": {
+                                            ".": {},
+                                            "f:lastProbeTime": {},
+                                            "f:lastTransitionTime": {},
+                                            "f:status": {},
+                                            "f:type": {}
+                                        },
+                                        "k:{\"type\":\"Ready\"}": {
+                                            ".": {},
+                                            "f:lastProbeTime": {},
+                                            "f:lastTransitionTime": {},
+                                            "f:status": {},
+                                            "f:type": {}
+                                        }
+                                    },
+                                    "f:containerStatuses": {},
+                                    "f:hostIP": {},
+                                    "f:hostIPs": {},
+                                    "f:phase": {},
+                                    "f:podIP": {},
+                                    "f:podIPs": {
+                                        ".": {},
+                                        "k:{\"ip\":\"10.244.3.5\"}": {
+                                            ".": {},
+                                            "f:ip": {}
+                                        }
+                                    },
+                                    "f:startTime": {}
+                                }
+                            },
+                            "manager": "kubelet",
+                            "operation": "Update",
+                            "subresource": "status",
+                            "time": "2025-06-27T09:25:54Z"
+                        }
+                    ],
+                    "name": "my-pod-2f84176c",
+                    "namespace": "chat-app",
+                    "resourceVersion": "398241",
+                    "uid": "61a34e82-94a4-436c-96ed-a391ecc4dfa4"
+                },
+                "spec": {
+                    "containers": [
+                        {
+                            "image": "nginx:latest",
+                            "imagePullPolicy": "Always",
+                            "name": "nginx",
+                            "resources": {},
+                            "terminationMessagePath": "/dev/termination-log",
+                            "terminationMessagePolicy": "File",
+                            "volumeMounts": [
+                                {
+                                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                    "name": "kube-api-access-ftfx5",
+                                    "readOnly": true
+                                }
+                            ]
+                        }
+                    ],
+                    "dnsPolicy": "ClusterFirst",
+                    "enableServiceLinks": true,
+                    "nodeName": "ingress-cluster-worker3",
+                    "preemptionPolicy": "PreemptLowerPriority",
+                    "priority": 0,
+                    "restartPolicy": "Always",
+                    "schedulerName": "default-scheduler",
+                    "securityContext": {},
+                    "serviceAccount": "default",
+                    "serviceAccountName": "default",
+                    "terminationGracePeriodSeconds": 30,
+                    "tolerations": [
+                        {
+                            "effect": "NoExecute",
+                            "key": "node.kubernetes.io/not-ready",
+                            "operator": "Exists",
+                            "tolerationSeconds": 300
+                        },
+                        {
+                            "effect": "NoExecute",
+                            "key": "node.kubernetes.io/unreachable",
+                            "operator": "Exists",
+                            "tolerationSeconds": 300
+                        }
+                    ],
+                    "volumes": [
+                        {
+                            "name": "kube-api-access-ftfx5",
+                            "projected": {
+                                "defaultMode": 420,
+                                "sources": [
+                                    {
+                                        "serviceAccountToken": {
+                                            "expirationSeconds": 3607,
+                                            "path": "token"
+                                        }
+                                    },
+                                    {
+                                        "configMap": {
+                                            "items": [
+                                                {
+                                                    "key": "ca.crt",
+                                                    "path": "ca.crt"
+                                                }
+                                            ],
+                                            "name": "kube-root-ca.crt"
+                                        }
+                                    },
+                                    {
+                                        "downwardAPI": {
+                                            "items": [
+                                                {
+                                                    "fieldRef": {
+                                                        "apiVersion": "v1",
+                                                        "fieldPath": "metadata.namespace"
+                                                    },
+                                                    "path": "namespace"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "status": {
+                    "conditions": [
+                        {
+                            "lastTransitionTime": "2025-06-27T09:25:54Z",
+                            "status": "True",
+                            "type": "PodReadyToStartContainers"
+                        },
+                        {
+                            "lastTransitionTime": "2025-06-27T09:25:42Z",
+                            "status": "True",
+                            "type": "Initialized"
+                        },
+                        {
+                            "lastTransitionTime": "2025-06-27T09:25:54Z",
+                            "status": "True",
+                            "type": "Ready"
+                        },
+                        {
+                            "lastTransitionTime": "2025-06-27T09:25:54Z",
+                            "status": "True",
+                            "type": "ContainersReady"
+                        },
+                        {
+                            "lastTransitionTime": "2025-06-27T09:25:42Z",
+                            "status": "True",
+                            "type": "PodScheduled"
+                        }
+                    ],
+                    "containerStatuses": [
+                        {
+                            "containerID": "containerd://d9d8c2760f60bcc4bbd8c914157e51771a587ee5874fde6106e5d7f1f2dca0d5",
+                            "image": "docker.io/library/nginx:latest",
+                            "imageID": "docker.io/library/nginx@sha256:dc53c8f25a10f9109190ed5b59bda2d707a3bde0e45857ce9e1efaa32ff9cbc1",
+                            "lastState": {},
+                            "name": "nginx",
+                            "ready": true,
+                            "restartCount": 0,
+                            "started": true,
+                            "state": {
+                                "running": {
+                                    "startedAt": "2025-06-27T09:25:53Z"
+                                }
+                            },
+                            "volumeMounts": [
+                                {
+                                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                    "name": "kube-api-access-ftfx5",
+                                    "readOnly": true,
+                                    "recursiveReadOnly": "Disabled"
+                                }
+                            ]
+                        }
+                    ],
+                    "hostIP": "172.19.0.4",
+                    "hostIPs": [
+                        {
+                            "ip": "172.19.0.4"
+                        }
+                    ],
+                    "phase": "Running",
+                    "podIP": "10.244.3.5",
+                    "podIPs": [
+                        {
+                            "ip": "10.244.3.5"
+                        }
+                    ],
+                    "qosClass": "BestEffort",
+                    "startTime": "2025-06-27T09:25:42Z"
+                }
+            },
+            "seed": "GlkJGQLF3sxDr38PuVDsAwqUnouiUOpFmrKWtVmy0Uo="
+        },
+        "urn:pulumi:dev::practice::kubernetes:core/v1:Pod::redis-pod": {
+            "goal": {
+                "type": "kubernetes:core/v1:Pod",
+                "name": "redis-pod",
+                "custom": true,
+                "inputDiff": {},
+                "outputDiff": {},
+                "parent": "urn:pulumi:dev::practice::pulumi:pulumi:Stack::practice-dev",
+                "protect": false,
+                "dependencies": [
+                    "urn:pulumi:dev::practice::kubernetes:core/v1:Namespace::chat-app"
+                ],
+                "provider": "urn:pulumi:dev::practice::pulumi:providers:kubernetes::default_4_23_0::7a29f845-35a0-450a-bc58-1fcbdd5c4e26",
+                "propertyDependencies": {
+                    "apiVersion": [],
+                    "kind": [],
+                    "metadata": [
+                        "urn:pulumi:dev::practice::kubernetes:core/v1:Namespace::chat-app"
+                    ],
+                    "spec": []
+                },
+                "customTimeouts": {}
+            },
+            "steps": [
+                "same"
+            ],
+            "state": {
+                "__fieldManager": "pulumi-kubernetes-e97e2648",
+                "__initialApiVersion": "v1",
+                "__inputs": {
+                    "apiVersion": "v1",
+                    "kind": "Pod",
+                    "metadata": {
+                        "annotations": {
+                            "pulumi.com/autonamed": "true"
+                        },
+                        "name": "redis-pod-8bb8a351",
+                        "namespace": "chat-app"
+                    },
+                    "spec": {
+                        "containers": [
+                            {
+                                "image": "redis:latest",
+                                "name": "redis-pod"
+                            }
+                        ]
+                    }
+                },
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "metadata": {
+                    "annotations": {
+                        "pulumi.com/autonamed": "true"
+                    },
+                    "creationTimestamp": "2025-06-27T11:48:04Z",
+                    "managedFields": [
+                        {
+                            "apiVersion": "v1",
+                            "fieldsType": "FieldsV1",
+                            "fieldsV1": {
+                                "f:metadata": {
+                                    "f:annotations": {
+                                        "f:pulumi.com/autonamed": {}
+                                    }
+                                },
+                                "f:spec": {
+                                    "f:containers": {
+                                        "k:{\"name\":\"redis-pod\"}": {
+                                            ".": {},
+                                            "f:image": {},
+                                            "f:name": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "manager": "pulumi-kubernetes-e97e2648",
+                            "operation": "Apply",
+                            "time": "2025-06-27T11:48:04Z"
+                        },
+                        {
+                            "apiVersion": "v1",
+                            "fieldsType": "FieldsV1",
+                            "fieldsV1": {
+                                "f:status": {
+                                    "f:conditions": {
+                                        "k:{\"type\":\"ContainersReady\"}": {
+                                            ".": {},
+                                            "f:lastProbeTime": {},
+                                            "f:lastTransitionTime": {},
+                                            "f:status": {},
+                                            "f:type": {}
+                                        },
+                                        "k:{\"type\":\"Initialized\"}": {
+                                            ".": {},
+                                            "f:lastProbeTime": {},
+                                            "f:lastTransitionTime": {},
+                                            "f:status": {},
+                                            "f:type": {}
+                                        },
+                                        "k:{\"type\":\"PodReadyToStartContainers\"}": {
+                                            ".": {},
+                                            "f:lastProbeTime": {},
+                                            "f:lastTransitionTime": {},
+                                            "f:status": {},
+                                            "f:type": {}
+                                        },
+                                        "k:{\"type\":\"Ready\"}": {
+                                            ".": {},
+                                            "f:lastProbeTime": {},
+                                            "f:lastTransitionTime": {},
+                                            "f:status": {},
+                                            "f:type": {}
+                                        }
+                                    },
+                                    "f:containerStatuses": {},
+                                    "f:hostIP": {},
+                                    "f:hostIPs": {},
+                                    "f:phase": {},
+                                    "f:podIP": {},
+                                    "f:podIPs": {
+                                        ".": {},
+                                        "k:{\"ip\":\"10.244.2.5\"}": {
+                                            ".": {},
+                                            "f:ip": {}
+                                        }
+                                    },
+                                    "f:startTime": {}
+                                }
+                            },
+                            "manager": "kubelet",
+                            "operation": "Update",
+                            "subresource": "status",
+                            "time": "2025-06-27T11:48:14Z"
+                        }
+                    ],
+                    "name": "redis-pod-8bb8a351",
+                    "namespace": "chat-app",
+                    "resourceVersion": "414277",
+                    "uid": "890f72dd-c94a-4537-bbe6-774201751cec"
+                },
+                "spec": {
+                    "containers": [
+                        {
+                            "image": "redis:latest",
+                            "imagePullPolicy": "Always",
+                            "name": "redis-pod",
+                            "resources": {},
+                            "terminationMessagePath": "/dev/termination-log",
+                            "terminationMessagePolicy": "File",
+                            "volumeMounts": [
+                                {
+                                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                    "name": "kube-api-access-vt7tp",
+                                    "readOnly": true
+                                }
+                            ]
+                        }
+                    ],
+                    "dnsPolicy": "ClusterFirst",
+                    "enableServiceLinks": true,
+                    "nodeName": "ingress-cluster-worker2",
+                    "preemptionPolicy": "PreemptLowerPriority",
+                    "priority": 0,
+                    "restartPolicy": "Always",
+                    "schedulerName": "default-scheduler",
+                    "securityContext": {},
+                    "serviceAccount": "default",
+                    "serviceAccountName": "default",
+                    "terminationGracePeriodSeconds": 30,
+                    "tolerations": [
+                        {
+                            "effect": "NoExecute",
+                            "key": "node.kubernetes.io/not-ready",
+                            "operator": "Exists",
+                            "tolerationSeconds": 300
+                        },
+                        {
+                            "effect": "NoExecute",
+                            "key": "node.kubernetes.io/unreachable",
+                            "operator": "Exists",
+                            "tolerationSeconds": 300
+                        }
+                    ],
+                    "volumes": [
+                        {
+                            "name": "kube-api-access-vt7tp",
+                            "projected": {
+                                "defaultMode": 420,
+                                "sources": [
+                                    {
+                                        "serviceAccountToken": {
+                                            "expirationSeconds": 3607,
+                                            "path": "token"
+                                        }
+                                    },
+                                    {
+                                        "configMap": {
+                                            "items": [
+                                                {
+                                                    "key": "ca.crt",
+                                                    "path": "ca.crt"
+                                                }
+                                            ],
+                                            "name": "kube-root-ca.crt"
+                                        }
+                                    },
+                                    {
+                                        "downwardAPI": {
+                                            "items": [
+                                                {
+                                                    "fieldRef": {
+                                                        "apiVersion": "v1",
+                                                        "fieldPath": "metadata.namespace"
+                                                    },
+                                                    "path": "namespace"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "status": {
+                    "conditions": [
+                        {
+                            "lastTransitionTime": "2025-06-27T11:48:14Z",
+                            "status": "True",
+                            "type": "PodReadyToStartContainers"
+                        },
+                        {
+                            "lastTransitionTime": "2025-06-27T11:48:04Z",
+                            "status": "True",
+                            "type": "Initialized"
+                        },
+                        {
+                            "lastTransitionTime": "2025-06-27T11:48:14Z",
+                            "status": "True",
+                            "type": "Ready"
+                        },
+                        {
+                            "lastTransitionTime": "2025-06-27T11:48:14Z",
+                            "status": "True",
+                            "type": "ContainersReady"
+                        },
+                        {
+                            "lastTransitionTime": "2025-06-27T11:48:04Z",
+                            "status": "True",
+                            "type": "PodScheduled"
+                        }
+                    ],
+                    "containerStatuses": [
+                        {
+                            "containerID": "containerd://38f6b3ee8a80124cbfd7f0db60501033733a88acd7e9952ff243b59aada36063",
+                            "image": "docker.io/library/redis:latest",
+                            "imageID": "docker.io/library/redis@sha256:1b835e5a8d5db58e8b718850bf43a68ef5a576fc68301fd08a789b20b4eecb61",
+                            "lastState": {},
+                            "name": "redis-pod",
+                            "ready": true,
+                            "restartCount": 0,
+                            "started": true,
+                            "state": {
+                                "running": {
+                                    "startedAt": "2025-06-27T11:48:13Z"
+                                }
+                            },
+                            "volumeMounts": [
+                                {
+                                    "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                    "name": "kube-api-access-vt7tp",
+                                    "readOnly": true,
+                                    "recursiveReadOnly": "Disabled"
+                                }
+                            ]
+                        }
+                    ],
+                    "hostIP": "172.19.0.3",
+                    "hostIPs": [
+                        {
+                            "ip": "172.19.0.3"
+                        }
+                    ],
+                    "phase": "Running",
+                    "podIP": "10.244.2.5",
+                    "podIPs": [
+                        {
+                            "ip": "10.244.2.5"
+                        }
+                    ],
+                    "qosClass": "BestEffort",
+                    "startTime": "2025-06-27T11:48:04Z"
+                }
+            },
+            "seed": "Ym6Dw6+KNN7B0+ze1XLyj0aMdrKPS11Kan4pE8BhHmQ="
+        },
+        "urn:pulumi:dev::practice::pkg:index:K8sApp$kubernetes:apps/v1:Deployment::nginx-deploy": {
+            "goal": {
+                "type": "kubernetes:apps/v1:Deployment",
+                "name": "nginx-deploy",
+                "custom": true,
+                "inputDiff": {
+                    "adds": {
+                        "apiVersion": "apps/v1",
+                        "kind": "Deployment",
+                        "metadata": {
+                            "name": "nginx-deploy",
+                            "namespace": "pulumi"
+                        },
+                        "spec": {
+                            "replicas": 1,
+                            "selector": {
+                                "matchLabels": {
+                                    "app": "nginx"
+                                }
+                            },
+                            "template": {
+                                "metadata": {
+                                    "labels": {
+                                        "app": "nginx"
+                                    }
+                                },
+                                "spec": {
+                                    "containers": [
+                                        {
+                                            "image": "nginx:latest",
+                                            "name": "nginx",
+                                            "ports": [
+                                                {
+                                                    "containerPort": 80
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "outputDiff": {},
+                "parent": "urn:pulumi:dev::practice::pkg:index:K8sApp::nginx",
+                "protect": false,
+                "provider": "urn:pulumi:dev::practice::pulumi:providers:kubernetes::default_4_23_0::7a29f845-35a0-450a-bc58-1fcbdd5c4e26",
+                "propertyDependencies": {
+                    "apiVersion": [],
+                    "kind": [],
+                    "metadata": [],
+                    "spec": []
+                },
+                "structuredAliases": [
+                    {
+                        "URN": "",
+                        "Name": "",
+                        "Type": "kubernetes:apps/v1beta1:Deployment",
+                        "Project": "",
+                        "Stack": "",
+                        "Parent": "",
+                        "NoParent": false
+                    },
+                    {
+                        "URN": "",
+                        "Name": "",
+                        "Type": "kubernetes:apps/v1beta2:Deployment",
+                        "Project": "",
+                        "Stack": "",
+                        "Parent": "",
+                        "NoParent": false
+                    },
+                    {
+                        "URN": "",
+                        "Name": "",
+                        "Type": "kubernetes:extensions/v1beta1:Deployment",
+                        "Project": "",
+                        "Stack": "",
+                        "Parent": "",
+                        "NoParent": false
+                    }
+                ],
+                "customTimeouts": {}
+            },
+            "steps": [
+                "create"
+            ],
+            "state": {
+                "apiVersion": "apps/v1",
+                "kind": "Deployment",
+                "metadata": {
+                    "name": "nginx-deploy",
+                    "namespace": "pulumi"
+                },
+                "spec": {
+                    "replicas": 1,
+                    "selector": {
+                        "matchLabels": {
+                            "app": "nginx"
+                        }
+                    },
+                    "template": {
+                        "metadata": {
+                            "labels": {
+                                "app": "nginx"
+                            }
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "image": "nginx:latest",
+                                    "name": "nginx",
+                                    "ports": [
+                                        {
+                                            "containerPort": 80
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "seed": "uDhirBicOdcIujRmDphRcyV+EeriR8GBg203WrL5UHo="
+        },
+        "urn:pulumi:dev::practice::pkg:index:K8sApp$kubernetes:core/v1:Service::nginx-svc": {
+            "goal": {
+                "type": "kubernetes:core/v1:Service",
+                "name": "nginx-svc",
+                "custom": true,
+                "inputDiff": {
+                    "adds": {
+                        "apiVersion": "v1",
+                        "kind": "Service",
+                        "metadata": {
+                            "name": "nginx-service",
+                            "namespace": "pulumi"
+                        },
+                        "spec": {
+                            "ports": [
+                                {
+                                    "port": 80,
+                                    "targetPort": 80
+                                }
+                            ],
+                            "selector": {
+                                "app": "nginx"
+                            }
+                        }
+                    }
+                },
+                "outputDiff": {},
+                "parent": "urn:pulumi:dev::practice::pkg:index:K8sApp::nginx",
+                "protect": false,
+                "provider": "urn:pulumi:dev::practice::pulumi:providers:kubernetes::default_4_23_0::7a29f845-35a0-450a-bc58-1fcbdd5c4e26",
+                "propertyDependencies": {
+                    "apiVersion": [],
+                    "kind": [],
+                    "metadata": [],
+                    "spec": []
+                },
+                "customTimeouts": {}
+            },
+            "steps": [
+                "create"
+            ],
+            "state": {
+                "apiVersion": "v1",
+                "kind": "Service",
+                "metadata": {
+                    "name": "nginx-service",
+                    "namespace": "pulumi"
+                },
+                "spec": {
+                    "ports": [
+                        {
+                            "port": 80,
+                            "targetPort": 80
+                        }
+                    ],
+                    "selector": {
+                        "app": "nginx"
+                    }
+                }
+            },
+            "seed": "5dLa5m9N53wNhBuvpUfBNOiSSOGrmdIKC6KeUaTygt8="
+        },
+        "urn:pulumi:dev::practice::pkg:index:K8sApp::nginx": {
+            "goal": {
+                "type": "pkg:index:K8sApp",
+                "name": "nginx",
+                "custom": false,
+                "inputDiff": {},
+                "outputDiff": {
+                    "adds": {
+                        "deployment_name": "nginx-deploy",
+                        "service_name": "nginx-service"
+                    }
+                },
+                "parent": "urn:pulumi:dev::practice::pulumi:pulumi:Stack::practice-dev",
+                "protect": false,
+                "customTimeouts": {}
+            },
+            "steps": [
+                "same"
+            ],
+            "state": {
+                "deployment_name": "nginx-deploy",
+                "service_name": "nginx-service"
+            },
+            "seed": "q/Jju9jJLQW9zaHfSn2/XpaObSyiPwTZsko3zmRNWG8="
+        },
+        "urn:pulumi:dev::practice::pulumi:providers:kubernetes::default_4_23_0": {
+            "goal": {
+                "type": "pulumi:providers:kubernetes",
+                "name": "default_4_23_0",
+                "custom": true,
+                "inputDiff": {},
+                "outputDiff": {},
+                "protect": false,
+                "customTimeouts": {}
+            },
+            "steps": [
+                "same"
+            ],
+            "state": {
+                "version": "4.23.0"
+            },
+            "seed": "v9cy/kEHp+M6TXl7oM/RMQeVXPzry4zZ7AR8DrAa0Qw="
+        },
+        "urn:pulumi:dev::practice::pulumi:pulumi:Stack::practice-dev": {
+            "goal": {
+                "type": "pulumi:pulumi:Stack",
+                "name": "practice-dev",
+                "custom": false,
+                "inputDiff": {},
+                "outputDiff": {},
+                "protect": false,
+                "customTimeouts": {}
+            },
+            "steps": [
+                "same"
+            ],
+            "state": {
+                "Namespace: ": "chat-app",
+                "SecretStack: ": {
+                    "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                    "ciphertext": "AAABAO/piq7D7se21e0Uqu1EBoNOht449dXGhcs2G0ERqXntPA=="
+                },
+                "Stack: ": "dev"
+            },
+            "seed": "oiunwOWIFmZFRQSXXS4nHOftE1TsjaW6aqJ59H1MswY="
+        }
+    }
+}

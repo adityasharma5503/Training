@@ -1,0 +1,5 @@
+config:
+  practice:stack: dev
+  practice:endpoints[0].url: www.eg.com
+  practice:endpoints[1].url:
+    secure: AAABALT4JB2PffbpdySu/u2qxkvsMoHFmaRcSliH4v0rqOEFnnpNHKzFlRM=

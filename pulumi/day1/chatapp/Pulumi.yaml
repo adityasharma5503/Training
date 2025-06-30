@@ -1,0 +1,18 @@
+name: chatapp
+description: Chatapp using pulumi
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: kubernetes-python
+  chatapp:backend_env:
+    - name: NODE_ENV
+      value: production
+    - name: MONGODB_URI
+      value: mongodb://root:example@mongodb:27017
+    - name: PORT
+      value: "5001"

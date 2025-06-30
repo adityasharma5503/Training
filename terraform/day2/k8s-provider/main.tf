@@ -299,15 +299,13 @@ resource "kubernetes_ingress_v1" "ingress-chatapp" {
     name = "ingress-chatapp"
     namespace = "terraform-ns"
     annotations = {
-      "nginx.ingress.kubernetes.io/rewrite-target" = "/"
+      # "nginx.ingress.kubernetes.io/rewrite-target" = "/"
       "nginx.ingress.kubernetes.io/ssl-redirect" = "false"
     }
   }
 
   spec {
-
     ingress_class_name = "nginx"
-
     rule {
       host = "localhost"
       http {
