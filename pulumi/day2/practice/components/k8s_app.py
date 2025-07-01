@@ -9,7 +9,7 @@ class K8sApp(pulumi.ComponentResource):
         super().__init__('pkg:index:K8sApp', name, None, opts)
 
         labels = { "app": name }
-
+ 
         self.deployment = Deployment(
             f"{name}-deploy",
             metadata=ObjectMetaArgs(

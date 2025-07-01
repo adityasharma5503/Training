@@ -1,0 +1,2 @@
+config:
+  assignment:k8sNamespace: monitoring
